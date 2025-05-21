@@ -63,10 +63,10 @@ app.post("/webhook", (req, res) => {
                                 text: "Hello, I'm your virtual PSA Haulier Services Assistant!\nPlease select one of the options below:"
                             },
                             footer: {
-                                text: "Powered by PSA Long Phung Testing hehhehehe"
+                                text: "Powered by PSA"
                             },
                             action: {
-                                button: "Select Change Request Type",
+                                button: "Select",
                                 sections: [
                                     {
                                         title: "Container Requests",
