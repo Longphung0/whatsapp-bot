@@ -63,10 +63,10 @@ app.post("/webhook", (req, res) => {
                                 text: "Hello, I'm your virtual PSA Haulier Services Assistant!\nPlease select one of the options below:"
                             },
                             footer: {
-                                text: "Powered by PSA Automation"
+                                text: "Powered by PSA Long Phung Testing hehhehehe"
                             },
                             action: {
-                                button: "Select Option",
+                                button: "Select Change Request Type",
                                 sections: [
                                     {
                                         title: "Container Requests",
@@ -74,17 +74,17 @@ app.post("/webhook", (req, res) => {
                                             {
                                                 id: "change_name",
                                                 title: "Change Container Name",
-                                                description: "Update the container's label"
+                                                description: "Update the container's Name"
                                             },
                                             {
-                                                id: "change_number",
-                                                title: "Change Container Number",
-                                                description: "Correct a container ID"
+                                                id: "change_weight",
+                                                title: "Change Container Weight",
+                                                description: "Correct a container's weight"
                                             },
                                             {
-                                                id: "change_size",
-                                                title: "Change Container Size",
-                                                description: "Request new size allocation"
+                                                id: "change_height",
+                                                title: "Change Container's height",
+                                                description: "Correct a container's height"
                                             }
                                         ]
                                     }
@@ -111,11 +111,11 @@ app.post("/webhook", (req, res) => {
                         case "change_name":
                             responseMessage = "You've selected to change the container name. Please provide the current container name and the new name you'd like to use.";
                             break;
-                        case "change_number":
-                            responseMessage = "You've selected to change the container number. Please provide the current container number and the new number.";
+                        case "change_weight":
+                            responseMessage = "You've selected to change the container weight. Please provide the weight.";
                             break;
-                        case "change_size":
-                            responseMessage = "You've selected to change the container size. Please specify the current container size and the desired new size.";
+                        case "change_height":
+                            responseMessage = "You've selected to change the container height. Please specify the new height.";
                             break;
                         default:
                             responseMessage = "Option not recognized. Please try again.";
