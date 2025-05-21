@@ -104,22 +104,30 @@ app.post("/webhook", (req, res) => {
                 if (interactiveResponse.type === 'list_reply') {
                     selectedId = interactiveResponse.list_reply.id;
                     
-                    let responseMessage = "";
-                    
-                    // Handle different selected options
+                    let formURL = "";
+
                     switch(selectedId) {
                         case "change_name":
-                            responseMessage = "You've selected to change the container name. Please provide the current container name and the new name you'd like to use.";
+                            formURL = "https://forms.office.com/r/11Y8DbFiyA";
                             break;
                         case "change_weight":
-                            responseMessage = "You've selected to change the container weight. Please provide the weight.";
+                            formURL = "https://forms.office.com/r/iWbPU3PNWc";
                             break;
                         case "change_height":
-                            responseMessage = "You've selected to change the container height. Please specify the new height.";
+                            formURL = "https://forms.office.com/r/PMc9R4qkEG";
                             break;
                         default:
-                            responseMessage = "Option not recognized. Please try again.";
+                            formURL = null;
                     }
+
+                    let responseMessage = "";
+
+                    if (formURL) {
+                        responseMessage = `You've selected the *${selectedId.replace("change_", "")}* change request.\n\nPlease fill in the form here:\n${formURL}`;
+                    } else {
+                        responseMessage = "Option not recognized. Please try again.";
+                    }
+
                     
                     // Send text response based on selection
                     axios({
