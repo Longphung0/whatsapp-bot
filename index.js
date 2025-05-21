@@ -63,7 +63,7 @@ app.post("/webhook", (req, res) => {
                                 text: "Hello, I'm your virtual PSA Haulier Services Assistant!\nPlease select one of the options below:"
                             },
                             footer: {
-                                text: "Powered by PSA"
+                                text: "Powered by Long PSA"
                             },
                             action: {
                                 button: "Select",
@@ -73,17 +73,17 @@ app.post("/webhook", (req, res) => {
                                         rows: [
                                             {
                                                 id: "change_name",
-                                                title: "Change Container Name",
+                                                title: "Container Name",
                                                 description: "Update the container's Name"
                                             },
                                             {
                                                 id: "change_weight",
-                                                title: "Change Container Weight",
+                                                title: "Container Weight",
                                                 description: "Correct a container's weight"
                                             },
                                             {
                                                 id: "change_height",
-                                                title: "Change Container's height",
+                                                title: "Container Height",
                                                 description: "Correct a container's height"
                                             }
                                         ]
