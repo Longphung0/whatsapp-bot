@@ -7,7 +7,7 @@ const app = express().use(body_parser.json());
 const token = process.env.TOKEN;
 const mytoken = process.env.MYTOKEN;
 
-app.listen(3000 || process.env.PORT, () => {
+app.listen(process.env.PORT, () => {
     console.log("Webhook is listening.")
 });
 //to verify the callback url from dashboard side - cloud api side
@@ -22,7 +22,7 @@ app.get("/webhook", (req, res) => {
         if(mode==="subscribe" && token === mytoken ){
             res.status(200).send(challenge);
         }else{
-            res.status(403);
+            res.sendStatus(403);
         }
     }
 });
@@ -67,3 +67,6 @@ app.post("/webhook", (req, res) => {
 
 
 
+app.get("/", (req, res) =>{
+    res.status(200).send("Webhook Hello hihi")
+})
