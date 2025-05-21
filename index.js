@@ -52,7 +52,7 @@ app.post("/webhook", (req, res) => {
                     messaging_product: "whatsapp",
                     to: from,    
                     text: {
-                        body: "Hello it's Longbot"
+                        body: "Hello, I'm your virtual PSA Haulier Services Assistant! Please Select the options below: A B C D E"
                     }
                 },
                 headers: {
