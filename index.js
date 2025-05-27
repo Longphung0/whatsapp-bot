@@ -72,19 +72,29 @@ app.post("/webhook", (req, res) => {
                                         title: "Container Requests",
                                         rows: [
                                             {
-                                                id: "change_name",
-                                                title: "Container Name",
-                                                description: "Update the container's Name"
-                                            },
-                                            {
                                                 id: "change_weight",
-                                                title: "Container Weight",
-                                                description: "Correct a container's weight"
+                                                title: "Weight",
+                                                description: "Amend the Container's Weight"
                                             },
                                             {
-                                                id: "change_height",
-                                                title: "Container Height",
-                                                description: "Correct a container's height"
+                                                id: "change_sealNumber",
+                                                title: "Seal Number",
+                                                description: "Amend a Seal Number"
+                                            },
+                                            {
+                                                id: "change_containerNumber",
+                                                title: "Container Number",
+                                                description: "Amend a Container's Number"
+                                            },
+                                            {
+                                                id: "esm_deletion",
+                                                title: "ESM Deletion",
+                                                description: "Delete an ESM"
+                                            },
+                                            {
+                                                id: "early_acceptance",
+                                                title: "Early Acceptance",
+                                                description: "Request for an Early Acceptance"
                                             }
                                         ]
                                     }
@@ -107,14 +117,20 @@ app.post("/webhook", (req, res) => {
                     let formURL = "";
 
                     switch(selectedId) {
-                        case "change_name":
-                            formURL = "https://forms.office.com/r/11Y8DbFiyA";
-                            break;
                         case "change_weight":
-                            formURL = "https://forms.office.com/r/iWbPU3PNWc";
+                            formURL = "https://forms.office.com/r/4nHZRifaWj";
                             break;
-                        case "change_height":
-                            formURL = "https://forms.office.com/r/PMc9R4qkEG";
+                        case "change_sealNumber":
+                            formURL = "https://forms.office.com/r/4nHZRifaWj";
+                            break;
+                        case "change_containerNumber":
+                            formURL = "https://forms.office.com/r/4nHZRifaWj";
+                            break;
+                        case "esm_deletion":
+                            formURL = "https://forms.office.com/r/4nHZRifaWj";
+                            break;
+                        case "early_acceptance":
+                            formURL = "https://forms.office.com/r/4nHZRifaWj";
                             break;
                         default:
                             formURL = null;
