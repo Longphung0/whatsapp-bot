@@ -60,10 +60,10 @@ app.post("/webhook", (req, res) => {
                         interactive: {
                             type: "list",
                             body: {
-                                text: "Hello, I'm your virtual PSA Haulier Services Assistant!\nPlease select one of the options below:"
+                                text: "Hello, I'm your virtual PSA Haulier Services Assistant!\nPlease select one of the request options below:"
                             },
                             footer: {
-                                text: "Powered by Long PSA"
+                                text: "Powered by Long from PSA"
                             },
                             action: {
                                 button: "Select",
@@ -74,22 +74,22 @@ app.post("/webhook", (req, res) => {
                                             {
                                                 id: "change_weight",
                                                 title: "Weight",
-                                                description: "Amend the Container's Weight"
+                                                description: "Request to amend the Container's Weight"
                                             },
                                             {
                                                 id: "change_sealNumber",
                                                 title: "Seal Number",
-                                                description: "Amend a Seal Number"
+                                                description: "Request to amend a Seal Number"
                                             },
                                             {
                                                 id: "change_containerNumber",
                                                 title: "Container Number",
-                                                description: "Amend a Container's Number"
+                                                description: "Request to amend a Container's Number"
                                             },
                                             {
                                                 id: "esn_deletion",
                                                 title: "ESN Deletion",
-                                                description: "Delete an ESN"
+                                                description: "Request for the deletion of ESN"
                                             },
                                             {
                                                 id: "early_acceptance",
