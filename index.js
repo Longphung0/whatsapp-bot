@@ -87,13 +87,13 @@ app.post("/webhook", (req, res) => {
                                                 description: "Amend a Container's Number"
                                             },
                                             {
-                                                id: "esm_deletion",
-                                                title: "ESM Deletion",
-                                                description: "Delete an ESM"
+                                                id: "esn_deletion",
+                                                title: "ESN Deletion",
+                                                description: "Delete an ESN"
                                             },
                                             {
                                                 id: "early_acceptance",
-                                                title: "Early Acceptance",
+                                                title: "Early Acceptance GP",
                                                 description: "Request for an Early Acceptance"
                                             }
                                         ]
@@ -121,25 +121,25 @@ app.post("/webhook", (req, res) => {
                             formURL = "https://forms.office.com/r/4nHZRifaWj";
                             break;
                         case "change_sealNumber":
-                            formURL = "https://forms.office.com/r/4nHZRifaWj";
+                            formURL = "https://forms.office.com/r/xr1ry06Vm3";
                             break;
                         case "change_containerNumber":
-                            formURL = "https://forms.office.com/r/4nHZRifaWj";
+                            formURL = "https://forms.office.com/r/dD45UytWVZ";
                             break;
-                        case "esm_deletion":
-                            formURL = "https://forms.office.com/r/4nHZRifaWj";
+                        case "esn_deletion":
+                            formURL = "https://forms.office.com/r/u2i5myxs1L";
                             break;
                         case "early_acceptance":
-                            formURL = "https://forms.office.com/r/4nHZRifaWj";
+                            formURL = "https://forms.office.com/r/QXxxmqWXw7";
                             break;
                         default:
                             formURL = null;
                     }
-
+                    const selectedTitle = interactiveResponse.list_reply.title;
                     let responseMessage = "";
 
                     if (formURL) {
-                        responseMessage = `You've selected the *${selectedId.replace("change_", "")}* change request.\n\nPlease fill in the form here:\n${formURL}`;
+                        responseMessage = `You've selected the *${selectedTitle}* request.\n\nPlease fill in the form here:\n${formURL}`;
                     } else {
                         responseMessage = "Option not recognized. Please try again.";
                     }
